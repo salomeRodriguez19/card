@@ -1,31 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta BEM</title>
+    <title>SENA Tempo 5G</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="card">
 
-        <img src="assets/img/logo.png" alt="" class="card__image">
+        <img src="assets/img/logo1.png" alt="SENA Tempo" class="card__image">
 
         <div class="card__content">
-            <h2 class="card__title">Aprendices ADSO</h2>
+
+            <span class="card__badge">📶 Red WiFi</span>
+
+            <h2 class="card__title">SENA Tempo 5G</h2>
 
             <p class="card__description">
-                Aprendices ADSO es un grupo de estudiantes que se encuentran en el programa de formación de desarrollo de software, con el objetivo de aprender y mejorar sus habilidades en programación y desarrollo web.
+                SENA Tempo 5G es una legendaria red inalámbrica reconocida por aparecer
+                cuando nadie la necesita y desaparecer justo antes de entregar una actividad.
+                Miles de aprendices han intentado conectarse; pocos han tenido éxito.
             </p>
-        </div>
 
-        <div class="card_action">
-            <button class="card__button card__button--primary">Aceptar</button>
-            <button class="card__button card__button--secondary">Cancelar</button>
+            <div class="card__stats">
+
+                <div class="card__stat">
+                    <h3>5G</h3>
+                    <span>Velocidad</span>
+                </div>
+
+                <div class="card__stat">
+                    <h3>24/7</h3>
+                    <span>Caídas</span>
+                </div>
+
+                <div class="card__stat">
+                    <h3>99%</h3>
+                    <span>Paciencia</span>
+                </div>
+
+            </div>
+
+            <div class="card__actions">
+
+                <button
+                    class="card__button card__button--primary"
+                    onclick="conectarWifi()">
+                    Conectar
+                </button>
+
+                <button
+                    class="card__button card__button--secondary"
+                    onclick="reiniciarWifi()">
+                    Reiniciar
+                </button>
+
+            </div>
+
+            <div id="estado" class="card__status">
+                Estado: Desconectado 🔴
+            </div>
+
+            <div class="card__footer">
+
+                <button
+                    class="card__small-button"
+                    title="Todos nuestros asesores están intentando conectarse al WiFi">
+                    📞 Soporte
+                </button>
+
+                <button
+                    class="card__small-button"
+                    title="Tiempo conectado: 2 minutos | Tiempo caído: 22 horas">
+                    📊 Estadísticas
+                </button>
+
+                <button
+                    class="card__small-button"
+                    title="Error: La configuración también perdió conexión">
+                    ⚙ Config
+                </button>
+
+            </div>
+
         </div>
 
     </div>
+
+    <script>
+
+        function conectarWifi(){
+
+            let estado = document.getElementById("estado");
+
+            estado.innerHTML = "📡 Buscando señal...";
+
+            setTimeout(()=>{
+                estado.innerHTML = "🌐 Intentando conectar...";
+            },1000);
+
+            setTimeout(()=>{
+                estado.innerHTML = "❌ Error: SENA Tempo se cayó";
+            },2500);
+        }
+
+        function reiniciarWifi(){
+
+            let estado = document.getElementById("estado");
+
+            estado.innerHTML = "🔄 Reiniciando servicio...";
+
+            setTimeout(()=>{
+                estado.innerHTML = "⚠ Reinicio fallido";
+            },2000);
+        }
+
+    </script>
 
 </body>
 </html>
